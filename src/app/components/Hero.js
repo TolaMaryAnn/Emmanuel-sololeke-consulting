@@ -6,6 +6,8 @@ import { FaFacebook, FaTwitter } from "react-icons/fa";
 
 export default function Hero() {
   return (
+    <div className="relative h-auto overflow-hidden">
+
     <div className="relative h-screen">
       <div className="absolute inset-0 -z-10">
         <Image
@@ -44,11 +46,12 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="bg-black bg-opacity-90 py-6 md:px-16 px-8 max-w-md relative mt-12 md:mt-0"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-        >
+  className="bg-black bg-opacity-90 py-6 md:px-16 px-8 max-w-md w-full relative mt-12 md:mt-0"
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1 }}
+>
+
           <motion.div
             className="absolute inset-0 border-4 border-white pointer-events-none"
             initial={{ scale: 0 }}
@@ -73,7 +76,7 @@ export default function Hero() {
                 id="firstName"
                 type="text"
                 placeholder="Enter Your First Name"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="mt-1 w-full block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
               />
             </div>
             <div>
@@ -87,7 +90,7 @@ export default function Hero() {
                 id="lastName"
                 type="text"
                 placeholder="Enter Your Last Name"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="mt-1 w-full block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
               />
             </div>
             <div>
@@ -101,7 +104,7 @@ export default function Hero() {
                 id="email"
                 type="email"
                 placeholder="Enter Your Email"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="mt-1 w-full block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
               />
             </div>
             <div>
@@ -115,7 +118,7 @@ export default function Hero() {
                 id="message"
                 rows="4"
                 placeholder="Write to us"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="mt-1  block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
               ></textarea>
             </div>
             <button
@@ -135,6 +138,7 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
+    </div>
     </div>
   );
 }
