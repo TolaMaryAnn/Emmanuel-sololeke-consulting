@@ -18,7 +18,7 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 pt-20 md:gap-16">
-        {/* Left Section */}
+     
         <motion.div
           className="text-white max-w-md space-y-4"
           initial={{ opacity: 0, x: -50 }}
@@ -29,7 +29,7 @@ export default function Hero() {
             Estate Agency
           </h2>
           <div className="text-5xl md:text-8xl font-extrabold tracking-wide">
-            <span className="border-b-4 border-white pb-1">EMMANUEL</span>
+            <span className="border-b-4  border-white md:pb-1">EMMANUEL</span>
             <br />
             SOLOLEKE
           </div>
@@ -43,7 +43,7 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* Right Section (Form) */}
+     
         <motion.div
           className="bg-black bg-opacity-90 py-6 md:px-16 px-6 max-w-md w-full relative mt-10 md:mt-0"
           initial={{ opacity: 0, x: 50 }}
