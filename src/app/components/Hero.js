@@ -25,10 +25,10 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 4 }}
         >
-          <h2 className="text-2xl md:text-3xl text-green-500 font-thin leading-tight">
+          <h2 className="text-xl md:text-3xl text-green-500 font-thin leading-tight">
             Estate Agency
           </h2>
-          <div className="text-6xl md:text-8xl font-extrabold tracking-wide">
+          <div className="text-5xl md:text-8xl font-extrabold tracking-wide">
             <span className="border-b-4 border-white pb-1">EMMANUEL</span>
             <br />
             SOLOLEKE
@@ -44,7 +44,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="bg-black bg-opacity-90 py-6 px-16 max-w-md relative mt-8 md:mt-0"
+          className="bg-black bg-opacity-90 py-6 md:px-16 px-8 max-w-md relative mt-12 md:mt-0"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -55,10 +55,10 @@ export default function Hero() {
             animate={{ scale: 1.1 }}
             transition={{ duration: 2, ease: "easeInOut" }}
           ></motion.div>
-          <h3 className="text-2xl font-extrabold text-green-500">
+          <h3 className="md:text-2xl text-xl font-extrabold text-green-500">
             YOUR NEW HOME AWAITS.
           </h3>
-          <p className="text-lg tracking-wider text-white">
+          <p className="text-sm md:text-lg tracking-wider text-white">
             Contact us to get the best offer!
           </p>
           <form className="space-y-4 mt-10">

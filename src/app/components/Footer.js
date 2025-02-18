@@ -46,20 +46,18 @@ export default function Footer() {
         </motion.div>
 
         <nav className="flex justify-center space-x-8 mb-6">
-          {["Home", "Properties", "News", "About", "Contact"].map(
-            (link, index) => (
-              <motion.a
-                key={index}
-                href="#"
-                className="text-gray-300 hover:text-green-500 transition-colors duration-300"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isInView ? 1 : 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {link}
-              </motion.a>
-            )
-          )}
+          {["Home", "About", "Contact"].map((link, index) => (
+            <motion.a
+              key={index}
+              href="#"
+              className="text-gray-300 hover:text-green-500 transition-colors duration-300"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isInView ? 1 : 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              {link}
+            </motion.a>
+          ))}
         </nav>
 
         <p className="text-gray-400 mb-6">

@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 
-
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -36,17 +35,20 @@ export default function Navbar() {
       animate={{ opacity: 1 }}
     >
       <div className="container  mx-auto flex justify-between items-center p-4">
-        <Link href="/" className="text-2xl font-bold tracking-wider text-black">
+        <Link
+          href="/"
+          className="md:text-2xl text-lg font-bold tracking-wider text-black"
+        >
           Emmanuel Sololeke Consulting
         </Link>
 
         <div className="hidden md:flex space-x-6 tracking-wider">
-          <Link href="#properties" className="hover:text-green-500 transition">
+          {/* <Link href="#properties" className="hover:text-green-500 transition">
             Properties
           </Link>
           <Link href="#news" className="hover:text-green-500 transition">
             News
-          </Link>
+          </Link> */}
           <Link href="About" className="hover:text-green-500 transition">
             About
           </Link>
@@ -64,8 +66,8 @@ export default function Navbar() {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg p-4 z-10">
-          <a
+        <div className="md:hidden bg-white text-lg shadow-lg p-4 z-10">
+          {/* <a
             href="#properties"
             className="block py-2 hover:text-secondary transition"
             onClick={() => setIsMenuOpen(false)}
@@ -78,7 +80,7 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           >
             News
-          </a>
+          </a> */}
           <a
             href="About"
             className="block py-2 hover:text-secondary transition"

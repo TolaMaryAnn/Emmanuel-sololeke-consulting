@@ -69,7 +69,7 @@ export default function About() {
 
       <section className="relative min-h-screen flex flex-col items-center justify-between text-center text-gray-800">
         <div className="relative px-6  pt-16 md:pt-24">
-          <h1 className="md:text-9xl text-6xl tracking-wider font-bold mb-6 text-black">
+          <h1 className="md:text-9xl text-4xl tracking-wider font-bold mb-6 text-black">
             Your Dream Home Awaits
           </h1>
         </div>
