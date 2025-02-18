@@ -70,7 +70,7 @@ export default function Testimonies() {
                 />
               </div>
               <div>
-                <p className="text-lg italic text-gray-700">
+                <p className="text-sm italic text-gray-700">
                   "{testimonial.quote}"
                 </p>
                 <p className="mt-2 font-bold text-gray-800">
