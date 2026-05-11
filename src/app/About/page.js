@@ -1,203 +1,254 @@
 "use client";
 
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { FaAward, FaHandshake, FaSearchLocation } from "react-icons/fa";
+import { HiArrowRight } from "react-icons/hi";
+import Link from "next/link";
+// Add this at the top with other imports
+import dynamic from "next/dynamic";
+
+const values = [
+  {
+    icon: FaAward,
+    title: "Excellence",
+    desc: "We deliver premium real estate experiences with certified expertise and dedication to quality.",
+  },
+  {
+    icon: FaHandshake,
+    title: "Trust",
+    desc: "Our clients trust us because we are transparent, honest, and dependable in every transaction.",
+  },
+  {
+    icon: FaSearchLocation,
+    title: "Local Expertise",
+    desc: "Deep knowledge of the Plateau State and Nigerian property market means smarter decisions for you.",
+  },
+];
+
+const team = [
+  {
+    src: "/Assets/business-8788632_1280.jpg",
+    name: "Linda Smith",
+    role: "CEO & Principal Agent",
+    bio: "Over 15 years of real estate leadership. Linda drives client satisfaction and strategic growth at Kodan Consulting.",
+  },
+  {
+    src: "/Assets/business-8788636_1280.jpg",
+    name: "Jane Parker",
+    role: "Marketing Lead",
+    bio: "Jane's innovative campaigns have placed Kodan properties front and center in a competitive market.",
+  },
+  {
+    src: "/Assets/business-8788635_1280.jpg",
+    name: "John Wilson",
+    role: "Senior Property Consultant",
+    bio: "John's expert market analysis helps clients secure the best investment opportunities in Plateau State.",
+  },
+  {
+    src: "/Assets/business-8788601_1280.jpg",
+    name: "Alex Robin",
+    role: "Interior Design Advisor",
+    bio: "Alex brings a creative eye to every property, helping clients visualize their dream spaces beautifully.",
+  },
+];
 
 export default function About() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="relative bg-green-50" >
-      
+    <div className="bg-white">
       <Navbar />
+      {/* Hero Section */}
+      {/* Hero Section */}
+      <section
+        className="relative min-h-[60vh] flex items-end pb-16 overflow-hidden"
+        style={{
+          backgroundImage: "url('/Assets/sale-3701777_1280.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0f1e]/85 via-[#0a0f1e]/60 to-emerald-950/50" />
 
-      <section className="relative mt-12 min-h-screen flex flex-col items-center justify-center py-16">
-        <div className="container mx-auto px-6 grid gap-12 md:grid-cols-2 items-center">
+        <div className="container mx-auto px-6 md:px-12 pt-32 relative z-10">
           <motion.div
-            className="text-gray-800 text-center md:text-left max-w-3xl mx-auto md:mx-0"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="md:text-6xl text-4xl font-bold mb-6 text-green-500">About Us</h1>
-            <p className="text-lg leading-relaxed mb-4">
-              Emmanuel Sololeke Consulting is a leading real estate brokerage
-              specializing in connecting clients with their dream properties.
-              With a focus on personalized service and market expertise, we
-              strive to make the buying and selling process seamless and
-              rewarding.
+            <span className="inline-block text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-4 bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 rounded-full">
+              About Us
+            </span>
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-none mb-6">
+              Who We Are
+            </h1>
+            <p className="text-white/70 max-w-xl text-base md:text-lg leading-relaxed">
+              Kodan Consulting is Plateau State&apos;s most trusted real estate
+              brokerage — connecting families, investors, and businesses with
+              exceptional properties.
             </p>
-            <p className="text-lg leading-relaxed">
-              Our team of experienced agents is dedicated to providing top-notch
-              guidance and support, ensuring that every client's real estate
-              journey is a success.
-            </p>
-          </motion.div>
-
-          <motion.div className="relative w-full h-[300px] md:h-[400px] overflow-hidden mt-8 md:mt-0">
-            <motion.div
-              className="w-full h-full"
-              style={{
-                scale: 1 + scrollPosition * 0.0005,
-              }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              <Image
-                src="/Assets/sale-3701777_1280.jpg"
-                alt="About us"
-                fill
-                className="object-cover"
-                priority
-              />
-            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      <section className="relative min-h-screen flex flex-col items-center justify-between text-center text-gray-800">
-        <div className="relative px-6  pt-16 md:pt-24">
-          <h1 className="md:text-9xl text-4xl tracking-wider font-bold mb-6 text-black">
-            Your Dream Home Awaits
-          </h1>
-        </div>
-
-        <motion.div className="relative w-full px-4 md:px-0 h-[500px] md:h-[700px] overflow-hidden mt-8 md:mt-12">
+      {/* Story + Image */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-14 items-center">
           <motion.div
-            className="w-full h-full"
-            style={{
-              scale: 1 + scrollPosition * 0.0005,
-            }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+          >
+            <span className="inline-block text-emerald-600 font-semibold text-sm tracking-widest uppercase mb-4 bg-emerald-50 px-4 py-1.5 rounded-full">
+              Our Story
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">
+              Building Legacies,{" "}
+              <span className="gradient-text">One Property at a Time</span>
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Kodan Consulting is a leading real estate brokerage in Nigeria,
+              specializing in connecting clients with their dream properties.
+              With a focus on personalized service and deep market expertise, we
+              make the buying and selling process seamless and rewarding.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-8">
+              Our team of experienced agents is dedicated to providing top-notch
+              guidance and support, ensuring that every client&apos;s real
+              estate journey is a complete success.
+            </p>
+            <Link
+              href="/Contact"
+              className="btn-primary inline-flex items-center gap-2 text-white font-bold px-8 py-3.5 rounded-full"
+            >
+              Work With Us <HiArrowRight />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            className="relative w-full h-80 md:h-[440px] rounded-2xl overflow-hidden shadow-2xl"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
           >
             <Image
-              src="/Assets/sololeke_5bg.jpg"
-              alt=""
-              layout="fill"
+              src="/Assets/houses.jpg"
+              alt="Kodan Consulting Properties"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
-              priority
+              loading="lazy"
             />
+            {/* Floating badge */}
+            <div className="float-badge absolute bottom-6 left-6 bg-white rounded-2xl px-5 py-3 shadow-xl">
+              <p className="text-2xl font-black text-emerald-600">10+</p>
+              <p className="text-gray-500 text-xs font-medium">
+                Years in Real Estate
+              </p>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
-      <section className="py-16 mt-12 md:mt-52">
-        <div className="container mx-auto px-6 text-center">
-          <motion.h2
-            className="md:text-6xl text-4xl font-bold mb-12 text-green-500"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+      {/* Values */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 md:px-12">
+          <motion.div
+            className="text-center mb-14"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            Meet Our Team
-          </motion.h2>
+            <h2 className="text-4xl font-black text-gray-900">
+              Our <span className="gradient-text">Core Values</span>
+            </h2>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              className="team-member bg-white p-6 rounded-lg shadow-md"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              <div className="relative w-32 h-32 mx-auto mb-4">
-                <Image
-                  src="/Assets/business-8788632_1280.jpg"
-                  alt="Linda Smith"
-                  className="object-cover rounded-full"
-                  layout="fill"
-                />
-              </div>
-              <h3 className="font-semibold text-xl">Linda Smith</h3>
-              <p className="text-gray-500">CEO</p>
-              <p className="mt-4 text-gray-600">
-                Linda has over 15 years of experience in real estate, bringing a
-                wealth of expertise in property management and development. She
-                leads the team with a focus on customer satisfaction and
-                innovation.
-              </p>
-            </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {values.map((v, i) => (
+              <motion.div
+                key={i}
+                className="rounded-2xl p-8 border border-gray-100 card-hover bg-white"
+                style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, duration: 0.6 }}
+              >
+                <div className="w-13 h-13 w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-5">
+                  <v.icon className="text-emerald-600 text-xl" />
+                </div>
+                <h3 className="font-bold text-gray-900 text-xl mb-3">
+                  {v.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {v.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <motion.div
-              className="team-member bg-white p-6 rounded-lg shadow-md"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-            >
-              <div className="relative w-32 h-32 mx-auto mb-4">
-                <Image
-                  src="/Assets/business-8788636_1280.jpg"
-                  alt="Jane Parker"
-                  className="object-cover rounded-full"
-                  layout="fill"
-                />
-              </div>
-              <h3 className="font-semibold text-xl">Jane Parker</h3>
-              <p className="text-gray-500">Marketing Lead</p>
-              <p className="mt-4 text-gray-600">
-                Jane specializes in digital marketing strategies, social media
-                management, and brand building. Her innovative campaigns have
-                successfully raised the profile of numerous properties.
-              </p>
-            </motion.div>
+      {/* Team */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <motion.div
+            className="text-center mb-14"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="inline-block text-emerald-600 font-semibold text-sm tracking-widest uppercase mb-4 bg-emerald-50 px-4 py-1.5 rounded-full">
+              The Experts
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900">
+              Meet Our <span className="gradient-text">Team</span>
+            </h2>
+          </motion.div>
 
-            <motion.div
-              className="team-member bg-white p-6 rounded-lg shadow-md"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-            >
-              <div className="relative w-32 h-32 mx-auto mb-4">
-                <Image
-                  src="/Assets/business-8788635_1280.jpg"
-                  alt="John Wilson"
-                  className="object-cover rounded-full"
-                  layout="fill"
-                />
-              </div>
-              <h3 className="font-semibold text-xl">John Wilson</h3>
-              <p className="text-gray-500">Lead Developer</p>
-              <p className="mt-4 text-gray-600">
-                John is responsible for the development of our digital
-                platforms. With a background in full-stack development, he
-                ensures our website is user-friendly and up-to-date with the
-                latest technology.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="team-member bg-white p-6 rounded-lg shadow-md"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8 }}
-            >
-              <div className="relative w-32 h-32 mx-auto mb-4">
-                <Image
-                  src="/Assets/business-8788601_1280.jpg"
-                  alt="Alex Robin"
-                  className="object-cover rounded-full"
-                  layout="fill"
-                />
-              </div>
-              <h3 className="font-semibold text-xl">Alex Robin</h3>
-              <p className="text-gray-500">Designer</p>
-              <p className="mt-4 text-gray-600">
-                Alex brings a creative flair to the team, designing beautiful
-                and functional layouts for our properties. His designs help
-                clients visualize their dream homes through stunning visuals.
-              </p>
-            </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member, i) => (
+              <motion.div
+                key={i}
+                className="group bg-white rounded-2xl overflow-hidden border border-gray-100 card-hover"
+                style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, duration: 0.6 }}
+              >
+                <div className="relative w-full h-48 overflow-hidden">
+                  <Image
+                    src={member.src}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-bold text-gray-900 text-base">
+                    {member.name}
+                  </h3>
+                  <p className="text-emerald-600 text-xs font-semibold mb-3">
+                    {member.role}
+                  </p>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    {member.bio}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

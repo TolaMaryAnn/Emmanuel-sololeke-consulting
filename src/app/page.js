@@ -1,6 +1,6 @@
 "use client";
 
-import LocomotiveScrollInit from "./components/LocomotiveScroll.";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import WeDeliver from "./components/WeDeliver";
@@ -15,7 +15,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div >
-      {/* <LocomotiveScrollInit /> */}
+     
       <Navbar />
       <Hero />
       <WeDeliver />
